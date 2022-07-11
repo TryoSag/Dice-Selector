@@ -1,7 +1,7 @@
 import { listOfDice } from "../../utils/utils";
 import Dice from "../Dice/Dice";
 
-const DiceSelector = () => {
+const DiceList = () => {
   return (
     <>
       <ul>
@@ -14,4 +14,4 @@ const DiceSelector = () => {
   );
 };
 
-export default DiceSelector;
+export default DiceList;
