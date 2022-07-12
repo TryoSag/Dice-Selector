@@ -9,13 +9,9 @@ const dicesSlice = createSlice({
   initialState: initialState,
   reducers: {
     incrementDice: (dices, action) =>
-      dices.map((dice, index) =>
-        index !== action.payload.index ? dice : dice++
-      ),
+      dices.map((dice, index) => (index !== action.payload ? dice : dice++)),
     decrementDice: (dices, action) =>
-      dices.map((dice, index) =>
-        index !== action.payload.index ? dice : dice--
-      ),
+      dices.map((dice, index) => (index !== action.payload ? dice : dice--)),
   },
 });
 
