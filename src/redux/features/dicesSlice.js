@@ -1,8 +1,12 @@
+import { listOfDice } from "../../utils/utils";
+
 const { createSlice } = require("@reduxjs/toolkit");
+
+const initialState = listOfDice.map(() => 0);
 
 const dicesSlice = createSlice({
   name: "dices",
-  initialState: [],
+  initialState: initialState,
   reducers: {
     incrementDice: (dices, action) =>
       dices.map((dice, index) =>
