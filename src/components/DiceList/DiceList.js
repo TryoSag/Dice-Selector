@@ -6,7 +6,11 @@ const DiceList = () => {
     <>
       <ul>
         {listOfDice.map((dice, index) => (
-          <Dice faces={dice.diceFaces} index={index} />
+          <Dice
+            faces={dice.diceFaces}
+            nameClass={dice.diceClass}
+            index={index}
+          />
         ))}
       </ul>
       <button>Throw</button>
