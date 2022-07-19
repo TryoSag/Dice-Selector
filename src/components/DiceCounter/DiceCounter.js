@@ -4,7 +4,7 @@ import {
   incrementDiceActionCreator,
 } from "../../redux/features/dicesSlice";
 
-const Dice = (faces, nameClass, index) => {
+const DiceCounter = (faces, nameClass, index) => {
   const dispatch = useDispatch();
   const dicesCounter = useSelector((state) => state.dices);
 
@@ -29,4 +29,4 @@ const Dice = (faces, nameClass, index) => {
   );
 };
 
-export default Dice;
+export default DiceCounter;

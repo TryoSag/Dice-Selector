@@ -1,8 +1,8 @@
-import { listOfDice } from "../../utils/utils";
+import { listOfDices } from "../../utils/utils";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
-const initialState = listOfDice.map(() => 0);
+const initialState = listOfDices.map(() => 0);
 
 const dicesSlice = createSlice({
   name: "dices",
