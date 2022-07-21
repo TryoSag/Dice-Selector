@@ -1,16 +1,16 @@
 import { listOfDices } from "../../utils/utils";
-import DiceCounter from "../DiceCounter/DiceCounter";
+import Counter from "../Counter/Counter";
+import Dice from "../Dice/Dice";
 
 const DicesCounterList = () => {
   return (
     <>
       <ul>
         {listOfDices.map((dice, index) => (
-          <DiceCounter
-            faces={dice.diceFaces}
-            nameClass={dice.diceClass}
-            index={index}
-          />
+          <li>
+            <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
+            <Counter index={index} />
+          </li>
         ))}
       </ul>
       <button>Throw</button>
