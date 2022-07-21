@@ -12,12 +12,14 @@ const dicesSlice = createSlice({
       dices.map((dice, index) => (index !== action.payload ? dice : dice++)),
     decrementDice: (dices, action) =>
       dices.map((dice, index) => (index !== action.payload ? dice : dice--)),
+    resetDices: () => initialState,
   },
 });
 
 export const {
   incrementDice: incrementDiceActionCreator,
   decrementDice: decrementDiceActionCreator,
+  resetDices: resetDicesActionCreator,
 } = dicesSlice.actions;
 
 export default dicesSlice.reducer;
