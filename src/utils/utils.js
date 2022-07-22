@@ -8,3 +8,12 @@ export const listOfDices = [
 
 export const diceRandom = (diceFaces) =>
   Math.floor(Math.random() * diceFaces + 1);
+
+export const d6Faces = [
+  "face-one",
+  "face-two",
+  "face-three",
+  "face-four",
+  "face-five",
+  "face-six",
+];
