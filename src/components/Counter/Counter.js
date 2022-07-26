@@ -1,4 +1,4 @@
-const Counter = (counterNumber, minusAction, plusAction) => {
+const Counter = ({ counterNumber, minusAction, plusAction }) => {
   const minusClick = () => minusAction();
   const plusClick = () => plusAction();
 

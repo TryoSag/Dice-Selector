@@ -1,4 +1,4 @@
-const Dice = (diceClass, diceNumber) => {
+const Dice = ({ diceClass, diceNumber }) => {
   return (
     <div className={diceClass}>
       <span>{diceNumber}</span>

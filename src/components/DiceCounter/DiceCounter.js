@@ -6,13 +6,13 @@ import {
   incrementDiceActionCreator,
 } from "../../redux/features/dicesSlice";
 
-const DiceCounter = (dice, diceIndex) => {
+const DiceCounter = ({ dice, diceIndex }) => {
   const dispatch = useDispatch();
-  const dicesCounter = useSelector((state) => state.dices);
+  const { dicesCounters } = useSelector((state) => state.dices);
 
-  const incrementDice = () => dispatch(incrementDiceActionCreator(diceIndex));
-  const decrementDice = () => {
-    if (dicesCounter[diceIndex] > 0) {
+  const diceIncrement = () => dispatch(incrementDiceActionCreator(diceIndex));
+  const diceDecrement = () => {
+    if (dicesCounters[diceIndex].length > 0) {
       dispatch(decrementDiceActionCreator(diceIndex));
     }
   };
@@ -21,9 +21,9 @@ const DiceCounter = (dice, diceIndex) => {
     <>
       <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
       <Counter
-        counterNumber={dicesCounter[diceIndex]}
-        minusAction={decrementDice}
-        plusAction={incrementDice}
+        counterNumber={dicesCounters[diceIndex].length}
+        minusAction={diceDecrement}
+        plusAction={diceIncrement}
       />
     </>
   );
