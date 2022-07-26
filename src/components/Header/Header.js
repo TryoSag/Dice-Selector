@@ -1,11 +1,9 @@
 import { d6Faces, diceRandom } from "../../utils/utils";
 
 const Header = () => {
-  const dotsClass = diceRandom(6);
-
   return (
     <header>
-      <div className={d6Faces[dotsClass]}>
+      <div className={d6Faces[diceRandom(6)]}>
         <div className="dot-one" />
         <div className="dot-two" />
         <div className="dot-three" />
@@ -16,3 +14,5 @@ const Header = () => {
     </header>
   );
 };
+
+export default Header;

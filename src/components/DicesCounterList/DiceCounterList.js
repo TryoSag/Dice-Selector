@@ -1,6 +1,5 @@
 import { listOfDices } from "../../utils/utils";
-import Counter from "../Counter/Counter";
-import Dice from "../Dice/Dice";
+import DiceCounter from "../DiceCounter/DiceCounter";
 
 const DicesCounterList = () => {
   return (
@@ -8,8 +7,7 @@ const DicesCounterList = () => {
       <ul>
         {listOfDices.map((dice, index) => (
           <li>
-            <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
-            <Counter index={index} />
+            <DiceCounter dice={dice} diceIndex={index} />
           </li>
         ))}
       </ul>
