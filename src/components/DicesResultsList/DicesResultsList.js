@@ -1,30 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
 import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
-import { diceRandom, listOfDices } from "../../utils/utils";
 import Dice from "../Dice/Dice";
 
 const DicesResultsList = () => {
   const dispatch = useDispatch();
-  const dicesCounter = useSelector((state) => state.dices);
-
-  const dicesResults = [];
-
-  dicesCounter.forEach((diceCounter, index) => {
-    for (let i = 0; i < diceCounter; i++) {
-      const diceFormat = {
-        diceClass: listOfDices[index].diceClass,
-        diceNumber: diceRandom(listOfDices[index].diceFaces),
-      };
-      dicesResults.push(diceFormat);
-    }
-  });
+  const { actualDicesResults } = useSelector((state) => state.dices);
 
   const resetDices = () => dispatch(resetDicesActionCreator());
+
+  // doble loop per printar daus
 
   return (
     <>
       <ul>
-        {dicesResults.map((dice) => (
+        {actualDicesResults.map((dice) => (
           <li>
             <Dice diceClass={dice.diceClass} diceNumber={dice.diceNumber} />
           </li>
