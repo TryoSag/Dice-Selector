@@ -1,26 +1,39 @@
-import { listOfDices } from "../../utils/utils";
+import { diceRandom, listOfDices } from "../../utils/utils";
 
 const { createSlice } = require("@reduxjs/toolkit");
-
-const inicialDicesCounters = listOfDices.map(() => 0);
 
 const dicesSlice = createSlice({
   name: "dices",
   initialState: {
-    dicesCounters: inicialDicesCounters,
     actualDicesResults: [],
     dicesResults: [],
   },
   reducers: {
-    incrementDice: (dices, action) =>
-      dices.dicesCounters.map((dice, index) =>
-        index !== action.payload ? dice : dice++
-      ),
-    decrementDice: (dices, action) =>
-      dices.dicesCounters.map((dice, index) =>
-        index !== action.payload ? dice : dice--
-      ),
-    resetDices: (dices) => (dices.dicesCounters = inicialDicesCounters),
+    incrementDice: (dices, action) => ({
+      ...dices,
+      actualDicesResults: [
+        ...dices.actualDicesResults,
+        (dices.actualDicesResults[action.payload] = [
+          ...dices.actualDicesResults[action.payload],
+          diceRandom(listOfDices[action.payload].diceFaces),
+        ]),
+      ],
+    }),
+
+    decrementDice: (dices, action) => ({
+      ...dices,
+      actualDicesResults: [
+        ...dices.actualDicesResults,
+        dices.actualDicesResults[action.payload].filter((diceResult,index,diceArray)=>{index-1===diceArray.length  diceResult }),
+      ],
+    }),
+
+    //revisar filter per treure l'ultim valor
+
+    resetDices: (dices) => {
+      dices.dicesResults.unshift(dices.actualDicesResults);
+      dices.actualDicesResults = [];
+    },
   },
 });
 
