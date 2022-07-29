@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
@@ -5,11 +6,13 @@ import Dice from "../Dice/Dice";
 
 const DicesResultsList = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { actualDicesResults } = useSelector((state) => state.dices);
 
-  const resetDices = () => dispatch(resetDicesActionCreator());
-
-  // reset redirecciona a diceselector
+  const resetDices = () => {
+    dispatch(resetDicesActionCreator());
+    navigate("/dicesCounter");
+  };
 
   return (
     <>

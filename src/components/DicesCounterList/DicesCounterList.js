@@ -1,15 +1,17 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { throwDicesActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
 import DiceCounter from "../DiceCounter/DiceCounter";
 
 const DicesCounterList = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const throwDices = () => {
     dispatch(throwDicesActionCreator());
+    navigate("/dicesResults");
   };
-  //throw redirecciona a resultslist
 
   return (
     <>
