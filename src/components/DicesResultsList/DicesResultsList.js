@@ -18,10 +18,10 @@ const DicesResultsList = () => {
     <>
       <ul>
         {actualDicesResults.map((diceResults, dicesIndex) => (
-          <li>
+          <li key={`${listOfDices[dicesIndex].diceFaces}`}>
             <ul>
-              {diceResults.map((diceResult) => (
-                <li>
+              {diceResults.map((diceResult, rowIndex) => (
+                <li key={`${listOfDices[dicesIndex].diceFaces}-${rowIndex}`}>
                   <Dice
                     diceClass={listOfDices[dicesIndex].diceClass}
                     diceNumber={diceResult}

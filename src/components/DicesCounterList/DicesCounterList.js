@@ -17,7 +17,7 @@ const DicesCounterList = () => {
     <>
       <ul>
         {listOfDices.map((dice, index) => (
-          <li>
+          <li key={dice.diceFaces}>
             <DiceCounter dice={dice} diceIndex={index} />
           </li>
         ))}
