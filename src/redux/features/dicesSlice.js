@@ -1,4 +1,4 @@
-import { listOfDices } from "../../utils/utils";
+import { diceRandom, listOfDices } from "../../utils/utils";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -16,8 +16,7 @@ const dicesSlice = createSlice({
       ...dices,
       numberOfDicesList: [
         ...dices.numberOfDicesList,
-        (dices.numberOfDicesList[action.payload] =
-          dices.numberOfDicesList[action.payload] + 1),
+        dices.numberOfDicesList[action.payload]++,
       ],
     }),
 
@@ -25,10 +24,19 @@ const dicesSlice = createSlice({
       ...dices,
       numberOfDicesList: [
         ...dices.numberOfDicesList,
-        (dices.numberOfDicesList[action.payload] =
-          dices.numberOfDicesList[action.payload] - 1),
+        dices.numberOfDicesList[action.payload]--,
       ],
     }),
+
+    throwDices: (dices) => {
+      const dicesResults = [];
+      dices.numberOfDicesList.forEach((diceCounter, index) => {
+        for (let i = 0; i < diceCounter; i++) {
+          dicesResults[index].push(diceRandom(listOfDices[index].diceFaces));
+        }
+      });
+      return { ...dices, actualDicesResults: dicesResults };
+    },
 
     resetDices: (dices) => ({
       ...dices,
@@ -44,6 +52,7 @@ const dicesSlice = createSlice({
 export const {
   incrementDice: incrementDiceActionCreator,
   decrementDice: decrementDiceActionCreator,
+  throwDices: throwDicesActionCreator,
   resetDices: resetDicesActionCreator,
 } = dicesSlice.actions;
 

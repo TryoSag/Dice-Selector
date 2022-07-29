@@ -1,20 +1,15 @@
-import { diceRandom, listOfDices } from "../../utils/utils";
+import { useDispatch } from "react-redux";
+import { throwDicesActionCreator } from "../../redux/features/dicesSlice";
+import { listOfDices } from "../../utils/utils";
 import DiceCounter from "../DiceCounter/DiceCounter";
 
 const DicesCounterList = () => {
-  const dicesResults = [];
+  const dispatch = useDispatch();
 
-  //adaptar formula per el throw
-
-  dicesResults.forEach((diceCounter, index) => {
-    for (let i = 0; i < diceCounter; i++) {
-      const diceFormat = {
-        diceClass: listOfDices[index].diceClass,
-        diceNumber: diceRandom(listOfDices[index].diceFaces),
-      };
-      dicesResults.push(diceFormat);
-    }
-  });
+  const throwDices = () => {
+    dispatch(throwDicesActionCreator());
+  };
+  //throw redirecciona a resultslist
 
   return (
     <>
@@ -25,7 +20,7 @@ const DicesCounterList = () => {
           </li>
         ))}
       </ul>
-      <button>Throw</button>
+      <button onClick={throwDices}>Throw</button>
     </>
   );
 };
