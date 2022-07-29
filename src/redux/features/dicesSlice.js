@@ -14,28 +14,35 @@ const dicesSlice = createSlice({
   reducers: {
     incrementDice: (dices, action) => ({
       ...dices,
-      numberOfDicesList: [
-        ...dices.numberOfDicesList,
-        dices.numberOfDicesList[action.payload]++,
-      ],
+      numberOfDicesList: dices.numberOfDicesList.map((numberOfdices, index) =>
+        action.payload === index ? numberOfdices + 1 : numberOfdices
+      ),
     }),
 
     decrementDice: (dices, action) => ({
       ...dices,
-      numberOfDicesList: [
-        ...dices.numberOfDicesList,
-        dices.numberOfDicesList[action.payload]--,
-      ],
+      numberOfDicesList: dices.numberOfDicesList.map((numberOfdices, index) =>
+        action.payload === index ? numberOfdices - 1 : numberOfdices
+      ),
     }),
 
     throwDices: (dices) => {
-      const dicesResults = [];
-      dices.numberOfDicesList.forEach((diceCounter, index) => {
-        for (let i = 0; i < diceCounter; i++) {
-          dicesResults[index].push(diceRandom(listOfDices[index].diceFaces));
-        }
-      });
-      return { ...dices, actualDicesResults: dicesResults };
+      const listOfCounters = dices.numberOfDicesList;
+
+      return {
+        ...dices,
+        actualDicesResults: listOfCounters.map(
+          (diceCounter, diceFacesIndex) => {
+            let dicesResults = [];
+            for (let i = 0; i < diceCounter; i++) {
+              dicesResults.push(
+                diceRandom(listOfDices[diceFacesIndex].diceFaces)
+              );
+            }
+            return dicesResults;
+          }
+        ),
+      };
     },
 
     resetDices: (dices) => {
