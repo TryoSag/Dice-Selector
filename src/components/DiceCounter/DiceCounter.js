@@ -8,11 +8,11 @@ import {
 
 const DiceCounter = ({ dice, diceIndex }) => {
   const dispatch = useDispatch();
-  const { dicesCounters } = useSelector((state) => state.dices);
+  const { numberOfDicesList } = useSelector((state) => state.dices);
 
   const diceIncrement = () => dispatch(incrementDiceActionCreator(diceIndex));
   const diceDecrement = () => {
-    if (dicesCounters[diceIndex].length > 0) {
+    if (numberOfDicesList[diceIndex] > 0) {
       dispatch(decrementDiceActionCreator(diceIndex));
     }
   };
@@ -21,7 +21,7 @@ const DiceCounter = ({ dice, diceIndex }) => {
     <>
       <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
       <Counter
-        counterNumber={dicesCounters[diceIndex].length}
+        counterNumber={numberOfDicesList[diceIndex]}
         minusAction={diceDecrement}
         plusAction={diceIncrement}
       />

@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
+import { listOfDices } from "../../utils/utils";
 import Dice from "../Dice/Dice";
 
 const DicesResultsList = () => {
@@ -8,14 +9,23 @@ const DicesResultsList = () => {
 
   const resetDices = () => dispatch(resetDicesActionCreator());
 
-  // doble loop per printar daus
+  // reset redirecciona a diceselector
 
   return (
     <>
       <ul>
-        {actualDicesResults.map((dice) => (
+        {actualDicesResults.map((diceResults, dicesIndex) => (
           <li>
-            <Dice diceClass={dice.diceClass} diceNumber={dice.diceNumber} />
+            <ul>
+              {diceResults.map((diceResult) => (
+                <li>
+                  <Dice
+                    diceClass={listOfDices[dicesIndex].diceClass}
+                    diceNumber={diceResult}
+                  />
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

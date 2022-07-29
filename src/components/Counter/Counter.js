@@ -1,6 +1,6 @@
 const Counter = ({ counterNumber, minusAction, plusAction }) => {
-  const minusClick = () => minusAction();
-  const plusClick = () => plusAction();
+  const minusClick = () => minusAction;
+  const plusClick = () => plusAction;
 
   return (
     <div className="container--counter">
