@@ -38,14 +38,17 @@ const dicesSlice = createSlice({
       return { ...dices, actualDicesResults: dicesResults };
     },
 
-    resetDices: (dices) => ({
-      ...dices,
-      listDicesResults: dices.listDicesResults.unshift(
-        dices.actualDicesResults
-      ),
-      numberOfDicesList: initalNumberOfDicesList,
-      actualDicesResults: [],
-    }),
+    resetDices: (dices) => {
+      const updateResultsList = [
+        dices.actualDicesResults,
+        ...dices.listDicesResults,
+      ];
+      return {
+        listDicesResults: updateResultsList,
+        numberOfDicesList: initalNumberOfDicesList,
+        actualDicesResults: [],
+      };
+    },
   },
 });
 
