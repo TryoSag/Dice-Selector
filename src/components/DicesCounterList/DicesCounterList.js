@@ -17,9 +17,7 @@ const DicesCounterList = () => {
     <>
       <ul>
         {listOfDices.map((dice, index) => (
-          <li key={dice.diceFaces}>
-            <DiceCounter dice={dice} diceIndex={index} />
-          </li>
+          <DiceCounter key={dice.diceFaces} dice={dice} diceIndex={index} />
         ))}
       </ul>
       <button onClick={throwDices}>Throw</button>

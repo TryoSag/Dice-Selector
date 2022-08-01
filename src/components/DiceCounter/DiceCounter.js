@@ -5,6 +5,7 @@ import {
   decrementDiceActionCreator,
   incrementDiceActionCreator,
 } from "../../redux/features/dicesSlice";
+import DiceCounterStyled from "./DiceCounterStyled";
 
 const DiceCounter = ({ dice, diceIndex }) => {
   const dispatch = useDispatch();
@@ -18,14 +19,14 @@ const DiceCounter = ({ dice, diceIndex }) => {
   };
 
   return (
-    <>
+    <DiceCounterStyled>
       <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
       <Counter
         counterNumber={numberOfDicesList[diceIndex]}
         minusAction={diceDecrement}
         plusAction={diceIncrement}
       />
-    </>
+    </DiceCounterStyled>
   );
 };
 
