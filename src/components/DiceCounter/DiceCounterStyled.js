@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 const DiceCounterStyled = styled.li`
+  min-height: 50px;
+
   display: flex;
+
+  margin-bottom: 10px;
 
   > div:nth-child(1) {
     flex: 1;

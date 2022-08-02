@@ -1,30 +1,52 @@
 import styled from "styled-components";
 
 const DiceStyled = styled.div`
-  height: 100%;
-  width: 100%;
+  min-height: 40px;
+  min-width: 40px;
+  height: 25vw;
+  width: 25vw;
 
-  div {
+  display: flex;
+  justify-content: center;
+
+  margin: 5px;
+
+  > div {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background: grey;
 
     > span {
+      height: 40px;
+      width: 40px;
+
       font-size: 25px;
       font-weight: bold;
+
+      text-align: center;
     }
 
     &.container--dice-4 {
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      clip-path: polygon(50% 0%, 0% 90%, 100% 90%);
+
+      padding-top: 5px;
     }
     &.container--dice-6 {
       clip-path: polygon(
-        10% 0%,
-        90% 0%,
-        100% 10%,
-        100% 90%,
-        90% 100%,
-        10% 100%,
-        0% 90%,
-        0% 10%
+        20% 10%,
+        80% 10%,
+        90% 20%,
+        90% 80%,
+        80% 90%,
+        20% 90%,
+        10% 80%,
+        10% 20%
       );
     }
     &.container--dice-8 {
@@ -32,6 +54,8 @@ const DiceStyled = styled.div`
     }
     &.container--dice-10 {
       clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+
+      padding-top: 5px;
     }
     &.container--dice-20 {
       clip-path: polygon(

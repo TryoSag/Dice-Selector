@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
 import Dice from "../Dice/Dice";
+import DicesResultsListStyled from "./DicesResultsListStyled";
 
 const DicesResultsList = () => {
   const dispatch = useDispatch();
@@ -15,11 +16,11 @@ const DicesResultsList = () => {
   };
 
   return (
-    <>
-      <ul>
+    <DicesResultsListStyled>
+      <ul className="list--dices">
         {actualDicesResults.map((diceResults, dicesIndex) => (
           <li key={`${listOfDices[dicesIndex].diceFaces}`}>
-            <ul>
+            <ul className="list--dice-results">
               {diceResults.map((diceResult, rowIndex) => (
                 <li key={`${listOfDices[dicesIndex].diceFaces}-${rowIndex}`}>
                   <Dice
@@ -33,7 +34,7 @@ const DicesResultsList = () => {
         ))}
       </ul>
       <button onClick={resetDices}>Reset</button>
-    </>
+    </DicesResultsListStyled>
   );
 };
 

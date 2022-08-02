@@ -5,18 +5,67 @@ const CounterStyled = styled.div`
   width: 100%;
 
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 
-  > span {
+  > .text--number {
     font-size: 35px;
     font-weight: bold;
-
-    margin: 0 15%;
   }
 
   > button {
-    margin: 0 15%;
+    height: 35px;
+    width: 35px;
+
+    border: 0;
+
+    :hover {
+      cursor: pointer;
+    }
+
+    &.button--minus {
+      clip-path: polygon(
+        25% 30%,
+        75% 30%,
+        95% 33%,
+        100% 50%,
+        95% 67%,
+        75% 70%,
+        25% 70%,
+        5% 67%,
+        0% 50%,
+        5% 33%
+      );
+    }
+
+    &.button--plus {
+      clip-path: polygon(
+        25% 30%,
+        30% 30%,
+        30% 25%,
+        33% 5%,
+        50% 0%,
+        67% 5%,
+        70% 25%,
+        70% 30%,
+        75% 30%,
+        95% 33%,
+        100% 50%,
+        95% 67%,
+        75% 70%,
+        70% 70%,
+        70% 75%,
+        67% 95%,
+        50% 100%,
+        33% 95%,
+        30% 75%,
+        30% 70%,
+        25% 70%,
+        5% 67%,
+        0% 50%,
+        5% 33%
+      );
+    }
   }
 `;
 
