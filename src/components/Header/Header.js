@@ -1,10 +1,11 @@
 import DecorDice from "../DecorDice/DecorDice";
+import HeaderStyled from "./HeaderStyled";
 
 const Header = () => {
   return (
-    <header>
+    <HeaderStyled>
       <DecorDice />
-    </header>
+    </HeaderStyled>
   );
 };
 

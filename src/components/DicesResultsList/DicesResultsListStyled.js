@@ -16,11 +16,17 @@ const DicesResultsListStyled = styled.section`
   .list--dice-results {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     margin: 10px 10px;
     padding-bottom: 5px;
 
     border-bottom: 2px dotted #000;
+
+    > li > div {
+      height: 25vw;
+      width: 25vw;
+    }
   }
 
   > button {

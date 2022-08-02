@@ -3,8 +3,6 @@ import styled from "styled-components";
 const DiceStyled = styled.div`
   min-height: 40px;
   min-width: 40px;
-  height: 25vw;
-  width: 25vw;
 
   display: flex;
   justify-content: center;
@@ -23,8 +21,8 @@ const DiceStyled = styled.div`
     background: grey;
 
     > span {
-      height: 40px;
-      width: 40px;
+      min-height: 40px;
+      min-width: 40px;
 
       font-size: 25px;
       font-weight: bold;

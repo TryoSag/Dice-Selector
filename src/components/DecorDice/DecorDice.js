@@ -1,14 +1,17 @@
 import { d6Faces, diceRandom } from "../../utils/utils";
+import DecorDiceStyled from "./DecorDiceStyled";
 const DecorDice = () => {
   return (
-    <div className={d6Faces[diceRandom(6) - 1]}>
-      <div className="dot-one" />
-      <div className="dot-two" />
-      <div className="dot-three" />
-      <div className="dot-four" />
-      <div className="dot-five" />
-      <div className="dot-six" />
-    </div>
+    <DecorDiceStyled>
+      <div className={`dice ${d6Faces[diceRandom(6) - 1]}`}>
+        <div className="dot dot-one" />
+        <div className="dot dot-two" />
+        <div className="dot dot-three" />
+        <div className="dot dot-four" />
+        <div className="dot dot-five" />
+        <div className="dot dot-six" />
+      </div>
+    </DecorDiceStyled>
   );
 };
 
