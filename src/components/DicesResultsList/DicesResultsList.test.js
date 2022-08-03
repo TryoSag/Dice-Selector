@@ -4,7 +4,7 @@ import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
 import DicesResultsList from "./DicesResultsList";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import mockDicesStore from "../../mocks/MockComponent";
+import { mockDicesStore } from "../../mocks/mocks";
 import userEvent from "@testing-library/user-event";
 
 const mockDispatch = jest.fn();

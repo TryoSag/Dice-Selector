@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-const { createSlice } = require("@reduxjs/toolkit");
+export const { createSlice } = require("@reduxjs/toolkit");
 
-const mockDicesStore = (initialState) => {
+export const mockDicesStore = (initialState) => {
   const mockDicesSlice = createSlice({
     name: "dices",
     initialState,
@@ -17,5 +17,3 @@ const mockDicesStore = (initialState) => {
     reducer: rootReducer,
   });
 };
-
-export default mockDicesStore;

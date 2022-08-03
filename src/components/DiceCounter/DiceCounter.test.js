@@ -8,7 +8,7 @@ import DiceCounter from "./DiceCounter";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import store from "../../redux/store/store";
-import mockDicesStore from "../../mocks/MockComponent";
+import { mockDicesStore } from "../../mocks/mocks";
 
 const mockDispatch = jest.fn();
 
