@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <HeaderStyled>
       <DecorDice />
+      <h1>Dice Selector</h1>
     </HeaderStyled>
   );
 };
