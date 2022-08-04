@@ -4,7 +4,7 @@ import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
 import DicesResultsList from "./DicesResultsList";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { mockDicesStore } from "../../mocks/mocks";
+import { mockStore } from "../../mocks/mocks";
 import userEvent from "@testing-library/user-event";
 
 const mockDispatch = jest.fn();
@@ -39,7 +39,7 @@ describe("Given the DicesResultsList component", () => {
 
       render(
         <BrowserRouter>
-          <Provider store={mockDicesStore(mockStoreState)}>
+          <Provider store={mockStore(mockStoreState)}>
             <DicesResultsList />
           </Provider>
         </BrowserRouter>

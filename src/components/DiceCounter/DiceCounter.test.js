@@ -8,7 +8,7 @@ import DiceCounter from "./DiceCounter";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import store from "../../redux/store/store";
-import { mockDicesStore } from "../../mocks/mocks";
+import { mockStore } from "../../mocks/mocks";
 
 const mockDispatch = jest.fn();
 
@@ -30,7 +30,7 @@ describe("Given the DiceCounter component", () => {
       const expectedArgument = decrementDiceActionCreator(testIndex);
 
       render(
-        <Provider store={mockDicesStore(mockStoreState)}>
+        <Provider store={mockStore(mockStoreState)}>
           <DiceCounter dice={testDice} diceIndex={testIndex} />
         </Provider>
       );
