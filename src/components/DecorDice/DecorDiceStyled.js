@@ -61,7 +61,7 @@ const DecorDiceStyled = styled.div`
     left: 10%;
   }
 
-  .face-one {
+  .side-one {
     .dot-two,
     .dot-three,
     .dot-four,
@@ -71,7 +71,7 @@ const DecorDiceStyled = styled.div`
     }
   }
 
-  .face-two {
+  .side-two {
     .dot-one,
     .dot-four,
     .dot-five,
@@ -80,7 +80,7 @@ const DecorDiceStyled = styled.div`
     }
   }
 
-  .face-three {
+  .side-three {
     .dot-four,
     .dot-five,
     .dot-six {
@@ -88,20 +88,20 @@ const DecorDiceStyled = styled.div`
     }
   }
 
-  .face-four {
+  .side-four {
     .dot-one,
     .dot-six {
       visibility: hidden;
     }
   }
 
-  .face-five {
+  .side-five {
     .dot-six {
       visibility: hidden;
     }
   }
 
-  .face-six {
+  .side-six {
     .dot-one {
       left: 70%;
     }

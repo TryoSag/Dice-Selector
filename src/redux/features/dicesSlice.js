@@ -32,11 +32,11 @@ const dicesSlice = createSlice({
       return {
         ...dices,
         actualDicesResults: listOfCounters.map(
-          (diceCounter, diceFacesIndex) => {
+          (diceCounter, diceSidesIndex) => {
             let dicesResults = [];
             for (let i = 0; i < diceCounter; i++) {
               dicesResults.push(
-                diceRandom(listOfDices[diceFacesIndex].diceFaces)
+                diceRandom(listOfDices[diceSidesIndex].diceSides)
               );
             }
             return dicesResults;

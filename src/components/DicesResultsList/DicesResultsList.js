@@ -19,10 +19,10 @@ const DicesResultsList = () => {
     <DicesResultsListStyled>
       <ul className="list--dices">
         {actualDicesResults.map((diceResults, dicesIndex) => (
-          <li key={`${listOfDices[dicesIndex].diceFaces}`}>
+          <li key={`${listOfDices[dicesIndex].diceSides}`}>
             <ul className="list--dice-results">
               {diceResults.map((diceResult, rowIndex) => (
-                <li key={`${listOfDices[dicesIndex].diceFaces}-${rowIndex}`}>
+                <li key={`${listOfDices[dicesIndex].diceSides}-${rowIndex}`}>
                   <Dice
                     diceClass={listOfDices[dicesIndex].diceClass}
                     diceNumber={diceResult}

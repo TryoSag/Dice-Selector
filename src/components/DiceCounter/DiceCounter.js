@@ -20,7 +20,7 @@ const DiceCounter = ({ dice, diceIndex }) => {
 
   return (
     <DiceCounterStyled>
-      <Dice diceClass={dice.diceClass} diceNumber={dice.diceFaces} />
+      <Dice diceClass={dice.diceClass} diceNumber={dice.diceSides} />
       <Counter
         counterNumber={numberOfDicesList[diceIndex]}
         minusAction={diceDecrement}

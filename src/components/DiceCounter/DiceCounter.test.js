@@ -21,7 +21,7 @@ describe("Given the DiceCounter component", () => {
   describe("When it's called and receives diceIndex 3 and a click on the first button", () => {
     test("Then it should call dispatch with action to decrement with 3", () => {
       const testIndex = 3;
-      const testDice = { diceClass: "test", diceFaces: 3 };
+      const testDice = { diceClass: "test", diceSides: 3 };
       const mockStoreState = {
         numberOfDicesList: [1, 1, 1, 1, 1],
         actualDicesResults: [],
@@ -45,7 +45,7 @@ describe("Given the DiceCounter component", () => {
   describe("When it's called and receives diceIndex 3 and a click on the second button", () => {
     test("Then it should increment the text number", () => {
       const testIndex = 3;
-      const testDice = { diceClass: "test", diceFaces: 3 };
+      const testDice = { diceClass: "test", diceSides: 3 };
 
       const expectedArgument = incrementDiceActionCreator(testIndex);
 
