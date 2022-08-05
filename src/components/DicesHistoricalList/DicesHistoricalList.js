@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { resetHistoricalActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
 import Dice from "../Dice/Dice";
 
@@ -6,8 +7,8 @@ const DicesHistoricalList = () => {
   const dispatch = useDispatch();
   const { listDicesResults } = useSelector((state) => state.dices);
 
-  const deleteHistorical = () => {
-    dispatch();
+  const resetHistorical = () => {
+    dispatch(resetHistoricalActionCreator());
   };
 
   return (
@@ -38,7 +39,7 @@ const DicesHistoricalList = () => {
           </li>
         ))}
       </ul>
-      <button onClick={deleteHistorical}>Delete</button>
+      <button onClick={resetHistorical}>Delete</button>
     </>
   );
 };

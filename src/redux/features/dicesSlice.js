@@ -56,6 +56,11 @@ const dicesSlice = createSlice({
         actualDicesResults: [],
       };
     },
+
+    resetHistorical: (dices) => ({
+      ...dices,
+      listDicesResults: [],
+    }),
   },
 });
 
@@ -64,6 +69,7 @@ export const {
   decrementDice: decrementDiceActionCreator,
   throwDices: throwDicesActionCreator,
   resetDices: resetDicesActionCreator,
+  resetHistorical: resetHistoricalActionCreator,
 } = dicesSlice.actions;
 
 export default dicesSlice.reducer;
