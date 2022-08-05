@@ -2,6 +2,7 @@ import dicesReducer, {
   decrementDiceActionCreator,
   incrementDiceActionCreator,
   resetDicesActionCreator,
+  resetHistoricalActionCreator,
   throwDicesActionCreator,
 } from "./dicesSlice";
 
@@ -123,6 +124,34 @@ describe("Given the resetDicesActionCreator function", () => {
       };
 
       const action = resetDicesActionCreator();
+      const returnedResult = dicesReducer(initialState, action);
+
+      expect(returnedResult).toEqual(expectedState);
+    });
+  });
+});
+
+describe("Given the resetHistoricalActionCreator function", () => {
+  describe("When it's called", () => {
+    test("Then it should return a object with the results list deleted", () => {
+      const initialState = {
+        numberOfDicesList: [],
+        actualDicesResults: [],
+        listDicesResults: [
+          [
+            [1, 1],
+            [1, 1],
+          ],
+        ],
+      };
+
+      const expectedState = {
+        numberOfDicesList: [],
+        actualDicesResults: [],
+        listDicesResults: [],
+      };
+
+      const action = resetHistoricalActionCreator();
       const returnedResult = dicesReducer(initialState, action);
 
       expect(returnedResult).toEqual(expectedState);
