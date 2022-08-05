@@ -1,9 +1,13 @@
-import { d6Sides, diceRandom } from "../../utils/utils";
+import { useState } from "react";
+import { randomDots } from "../../utils/utils";
 import DecorDiceStyled from "./DecorDiceStyled";
 const DecorDice = () => {
+  const [dotsClass, setDotsClass] = useState(randomDots());
+
+  const changeDots = () => setDotsClass(randomDots());
   return (
     <DecorDiceStyled>
-      <div className={`dice ${d6Sides[diceRandom(6) - 1]}`}>
+      <div className={`dice ${dotsClass}`} onClick={changeDots}>
         <div className="dot dot-one" />
         <div className="dot dot-two" />
         <div className="dot dot-three" />

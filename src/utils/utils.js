@@ -17,3 +17,5 @@ export const d6Sides = [
   "side-five",
   "side-six",
 ];
+
+export const randomDots = () => d6Sides[diceRandom(6) - 1];
