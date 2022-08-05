@@ -39,7 +39,7 @@ const DicesHistoricalList = () => {
           </li>
         ))}
       </ul>
-      <button onClick={resetHistorical}>Delete</button>
+      <button onClick={resetHistorical}>Reset</button>
     </>
   );
 };
