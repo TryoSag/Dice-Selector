@@ -1,8 +1,12 @@
+import ModalContainerStyled from "./ModalContainerStyled";
+
 const ModalContainer = ({ children, modalState }) => {
   return (
-    <div className={`modal--container  ${modalState ? "visible" : "hiden"}`}>
-      {children}
-    </div>
+    <ModalContainerStyled>
+      <div className={`modal--container  ${modalState ? "visible" : "hidden"}`}>
+        {children}
+      </div>
+    </ModalContainerStyled>
   );
 };
 
