@@ -5,10 +5,10 @@ const ModalContainerStyled = styled.div`
     position: absolute;
     z-index: 1;
 
-    width: 100vw;
-    min-height: 80vh;
+    width: 0;
+    height: 0;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 
@@ -39,13 +39,11 @@ const ModalContainerStyled = styled.div`
     }
   }
 
-  .hidden {
-    display: none;
-    right: 100vw;
-  }
-
   .visible {
-    transition: left 3s;
+    display: flex;
+    width: 100vw;
+    min-height: 50vh;
+    transition: 3s ease-in-out;
   }
 `;
 export default ModalContainerStyled;
