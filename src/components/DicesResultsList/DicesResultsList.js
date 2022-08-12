@@ -4,6 +4,7 @@ import { resetDicesActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
 import Dice from "../Dice/Dice";
 import DicesResultsListStyled from "./DicesResultsListStyled";
+import Button from "../Button/Button";
 
 const DicesResultsList = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const DicesResultsList = () => {
           </li>
         ))}
       </ul>
-      <button onClick={resetDices}>Reset</button>
+      <Button onClickAction={resetDices} buttonText={"Reset"} />
     </DicesResultsListStyled>
   );
 };

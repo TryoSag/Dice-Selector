@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { throwDicesActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
+import Button from "../Button/Button";
 import DiceCounter from "../DiceCounter/DiceCounter";
 import DiceCounterListStyled from "./DicesCounterListStyled";
 
@@ -21,7 +22,7 @@ const DicesCounterList = () => {
           <DiceCounter key={dice.diceSides} dice={dice} diceIndex={index} />
         ))}
       </ul>
-      <button onClick={throwDices}>Throw</button>
+      <Button onClickAction={throwDices} buttonText={"Throw"} />
     </DiceCounterListStyled>
   );
 };

@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { resetHistoricalActionCreator } from "../../redux/features/dicesSlice";
 import { listOfDices } from "../../utils/utils";
+import Button from "../Button/Button";
 import Dice from "../Dice/Dice";
 
 const DicesHistoricalList = () => {
@@ -39,7 +40,7 @@ const DicesHistoricalList = () => {
           </li>
         ))}
       </ul>
-      <button onClick={resetHistorical}>Reset</button>
+      <Button onClickAction={resetHistorical} buttonText={"Reset"} />
     </>
   );
 };

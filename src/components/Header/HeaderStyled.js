@@ -9,7 +9,7 @@ const HeaderStyled = styled.header`
   border-bottom: 5px dotted #000;
 
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: space-between;
 
   > div {
     margin: 1vh;

@@ -28,24 +28,6 @@ const DicesResultsListStyled = styled.section`
       width: 25vw;
     }
   }
-
-  > button {
-    height: 30px;
-    width: 100px;
-
-    align-self: center;
-    margin-bottom: 50px;
-
-    border: 2px solid #000;
-    border-radius: 10px;
-
-    font-weight: bold;
-    font-size: 25px;
-
-    :hover {
-      cursor: pointer;
-    }
-  }
 `;
 
 export default DicesResultsListStyled;
