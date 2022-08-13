@@ -19,20 +19,28 @@ const DicesResultsList = () => {
   return (
     <DicesResultsListStyled>
       <ul className="list--dices">
-        {actualDicesResults.map((diceResults, dicesIndex) => (
-          <li key={`${listOfDices[dicesIndex].diceSides}`}>
-            <ul className="list--dice-results">
-              {diceResults.map((diceResult, rowIndex) => (
-                <li key={`${listOfDices[dicesIndex].diceSides}-${rowIndex}`}>
-                  <Dice
-                    diceClass={listOfDices[dicesIndex].diceClass}
-                    diceNumber={diceResult}
-                  />
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
+        {actualDicesResults.map(
+          (diceResults, dicesIndex) =>
+            diceResults.length > 0 && (
+              <li key={`${listOfDices[dicesIndex].diceSides}`}>
+                <h3 className="list--dices-sides">
+                  D{listOfDices[dicesIndex].diceSides}
+                </h3>
+                <ul className="list--dice-results">
+                  {diceResults.map((diceResult, rowIndex) => (
+                    <li
+                      key={`${listOfDices[dicesIndex].diceSides}-${rowIndex}`}
+                    >
+                      <Dice
+                        diceClass={listOfDices[dicesIndex].diceClass}
+                        diceNumber={diceResult}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+        )}
       </ul>
       <Button onClickAction={resetDices} buttonText={"Reset"} />
     </DicesResultsListStyled>

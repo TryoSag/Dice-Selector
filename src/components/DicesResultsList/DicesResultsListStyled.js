@@ -9,8 +9,14 @@ const DicesResultsListStyled = styled.section`
   display: flex;
   flex-direction: column;
 
-  * ul {
-    margin-bottom: 10px;
+  .list--dices {
+    margin-bottom: 20px;
+
+    border-bottom: 2px dotted #000;
+  }
+
+  .list--dices-sides {
+    margin: 0 auto 0 10px;
   }
 
   .list--dice-results {
@@ -18,10 +24,7 @@ const DicesResultsListStyled = styled.section`
     flex-wrap: wrap;
     justify-content: center;
 
-    margin: 10px 10px;
-    padding-bottom: 5px;
-
-    border-bottom: 2px dotted #000;
+    margin-bottom: 10px;
 
     > li > div {
       height: 25vw;
